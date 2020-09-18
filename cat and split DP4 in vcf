@@ -1,0 +1,2 @@
+perl -ne'print $_ if /DP4=(\d+),(\d+),(\d+),(\d+)/ &&($3+$4)>=10 && ($3+$4)/($1+$2+$3+$4)>=0.8'smaple_raw.vcf > sample_filter.vcf
+cat  autochr.highQuali.varType | perl -alne '{next if /^#/;/DP4=(.*?);.*VARTYPE=(.*?)\s/;print "$F[0],$1,$2"}'>DP4.stat
